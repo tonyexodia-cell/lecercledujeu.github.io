@@ -108,7 +108,7 @@
 </section>
 
 
-	  <div style="
+	<div style="
     max-width:900px;
     margin:40px auto;
     background-color:#e6f2ff;
@@ -122,10 +122,45 @@
     color:#333;
 ">
 
-    <h1 style="text-align:center; margin-bottom:30px;">
+    <h1 style="text-align:center; margin-bottom:20px;">
         Événements Passés
     </h1>
- </div>
+
+    <!-- Barre de recherche centrée -->
+    <div style="text-align:center; margin-bottom:30px;">
+        <input id="searchBox" placeholder="Rechercher sur la page..." 
+               style="padding:10px 15px; font-size:18px; width:60%; border-radius:8px; border:1px solid #ccc;">
+    </div>
+
+    <!-- Ici le reste de ton contenu -->
+    <p>… contenu des événements …</p>
+
+</div>
+
+<script>
+const searchBox = document.getElementById("searchBox");
+let firstMatch = null;
+
+searchBox.addEventListener("keyup", function(e){
+    const text = e.target.value.toLowerCase();
+    firstMatch = null;
+
+    document.querySelectorAll("p, h1, h2, li, span, div").forEach(el => {
+        const elText = el.textContent.toLowerCase();
+        if(text !== "" && elText.includes(text)){
+            el.style.backgroundColor = "yellow";
+            if(!firstMatch) firstMatch = el;
+        } else {
+            el.style.backgroundColor = "";
+        }
+    });
+
+    if(firstMatch){
+        firstMatch.scrollIntoView({behavior: "smooth", block: "center"});
+    }
+});
+</script>
+
 
 
 
