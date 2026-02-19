@@ -128,6 +128,39 @@
  </div>
 
 
+
+<input id="searchBox" placeholder="Rechercher sur la page..." style="position:fixed;top:10px;right:10px;z-index:999;padding:5px;">
+
+<script>
+const searchBox = document.getElementById("searchBox");
+let firstMatch = null;
+
+searchBox.addEventListener("keyup", function(e){
+    const text = e.target.value.toLowerCase();
+    firstMatch = null;
+
+    // On parcourt tous les éléments texte de la page (p, h1, h2, li...)
+    document.querySelectorAll("p, h1, h2, li, span, div").forEach(el => {
+        const elText = el.textContent.toLowerCase();
+        if(text !== "" && elText.includes(text)){
+            el.style.backgroundColor = "yellow";
+            // On garde le premier élément trouvé pour scroller
+            if(!firstMatch) firstMatch = el;
+        } else {
+            el.style.backgroundColor = "";
+        }
+    });
+
+    // Scroll vers le premier résultat si trouvé
+    if(firstMatch){
+        firstMatch.scrollIntoView({behavior: "smooth", block: "center"});
+    }
+});
+</script>
+
+
+
+	  
 	  
 
 <div style="
