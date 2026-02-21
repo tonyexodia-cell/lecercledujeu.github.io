@@ -30,67 +30,85 @@
 	
   
    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <header class="main-header">
-  
-  <div class="logo-zone">
-    <img src="https://lecercledujeu.com/favicon.png" alt="Logo Pokémon TCG">
-    <span>Pokémon T.C.G.</span>
-  </div>
 
-  <div class="socials">
-    <a href="https://www.facebook.com/pokemonAngers" target="_blank">
-      <img src="https://lecercledujeu.com/facebook2.png" alt="Facebook">
-    </a>
-    <a href="https://discord.gg/NdNJMuQKu8" target="_blank">
-      <img src="https://lecercledujeu.com/discord.jpg" alt="Discord">
-    </a>
+  <div class="header-container">
+    
+    <!-- Logo + Titre -->
+    <div class="logo-zone">
+      <img src="https://lecercledujeu.com/favicon.png" alt="Logo Pokémon TCG">
+      <span>Pokémon T.C.G.</span>
+    </div>
+
+    <!-- Réseaux -->
+    <div class="socials">
+      <a href="https://www.facebook.com/pokemonAngers" target="_blank">
+        <img src="https://lecercledujeu.com/facebook2.png" alt="Facebook">
+      </a>
+      <a href="https://discord.gg/NdNJMuQKu8" target="_blank">
+        <img src="https://lecercledujeu.com/discord.jpg" alt="Discord">
+      </a>
+    </div>
+
   </div>
 
 </header>
 
 <style>
 .main-header {
+  background-color: #4FC3F7;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 1400px;   /* largeur fixe comme ton écran PC */
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
-  background-color: #4FC3F7;
+  padding: 20px 40px;
 }
 
+/* Logo */
 .logo-zone {
   display: flex;
   align-items: center;
 }
 
 .logo-zone img {
-  height: 150px; /* taille PC */
-  margin-right: 20px;
+  height: 170px; /* même taille que ton ancien */
+  margin-right: 15px;
 }
 
 .logo-zone span {
   color: white;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 22px;
 }
 
+/* Réseaux */
 .socials {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 15px;
 }
 
 .socials img {
   width: 35px;
+  height: auto;
 }
 
-/* ✅ Version mobile */
+/* ===================== */
+/* VERSION MOBILE PROPRE */
+/* ===================== */
+
 @media (max-width: 768px) {
-  
-  .main-header {
+
+  .header-container {
     flex-direction: column;
     text-align: center;
-    padding: 20px;
   }
 
   .logo-zone {
@@ -98,7 +116,7 @@
   }
 
   .logo-zone img {
-    height: 110px; /* logo un peu plus petit mobile */
+    height: 120px;
     margin: 0 0 10px 0;
   }
 
