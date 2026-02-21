@@ -20,6 +20,74 @@
 
   <link rel="stylesheet" href="/style.css">
 
+
+
+  ...
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .main-header {
+      background-color: #4FC3F7;
+      width: 100%;
+    }
+
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    /* Logo */
+    .logo-zone {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-zone img {
+      height: 170px;
+      margin-right: 15px;
+    }
+
+    .logo-zone span {
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    /* Réseaux */
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .socials img {
+      width: 35px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .logo-zone {
+        flex-direction: column;
+      }
+      .logo-zone img {
+        height: 120px;
+        margin: 0 0 10px 0;
+      }
+      .socials {
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+	
 </head>
 
 	
